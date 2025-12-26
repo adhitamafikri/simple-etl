@@ -80,7 +80,7 @@ export function normalizeToE164(phone: string): string {
   }
 
   // For numbers not starting with `+`, remove all non-digit characters.
-  let cleanedPhone = phone.replace(/[^\d]/g, '')
+  const cleanedPhone = phone.replace(/[^\d]/g, '')
 
   // Indonesian local formats - check before country codes to treat '8' and '0' starting numbers as Indonesian
   if (cleanedPhone.startsWith('0')) {

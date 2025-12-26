@@ -14,7 +14,7 @@ export const memberVipOld = {
 }
 
 export const memberVipV1 = {
-  registration_date: 1, // Column B 
+  registration_date: 1, // Column B
   expiry_date: 2, // Column C
   name: 3, // Column D
   phone: 4, // Column E
@@ -43,4 +43,3 @@ export const memberVvip = {
   updated_email: 11, // Column L
   status: 14, // Column O
 }
-
