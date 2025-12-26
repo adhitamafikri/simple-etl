@@ -2,6 +2,9 @@
 node_modules/
 .pnpm-store/
 
+# Google Config
+src/config/google/*.json
+
 # Build outputs
 dist/
 build/

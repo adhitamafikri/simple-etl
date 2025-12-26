@@ -1,0 +1,20 @@
+import { memberVvip } from '~/config/columnMapping'
+import type { User } from '~/types/users'
+
+export function transformMemberVvip(rows: (string | number)[][]): User[] {
+  const result: User[] = []
+
+  rows.forEach((row) => {
+    result.push({
+      name: row[memberVvip.name] as string,
+      email: row[memberVvip.email] as string | null,
+      phone: row[memberVvip.phone] as string,
+      membership_expiry_date: (row[memberVvip.expiry_date] as string)
+        ? new Date(row[memberVvip.expiry_date])
+        : null,
+      membership_tier: null,
+    })
+  })
+
+  return result
+}
