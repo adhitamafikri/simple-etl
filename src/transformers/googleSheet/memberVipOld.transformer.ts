@@ -10,10 +10,10 @@ export function transformMemberVipOld(rows: (string | number)[][]): User[] {
       name: row[memberVipOld.name] as string,
       email: row[memberVipOld.email] as string,
       phone: normalizeToE164(row[memberVipOld.phone] as string),
+      membership_tier: 'member', // in our existing database, VIP members are called 'member'
       membership_expiry_date: (row[memberVipOld.new_expiry_date] as string)
         ? new Date(row[memberVipOld.new_expiry_date])
-        : null,
-      membership_tier: null,
+        : new Date('2026-12-31'),
     })
   })
 
