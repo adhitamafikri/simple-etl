@@ -4,6 +4,7 @@ import { transformMemberVipOld } from '~/transformers/googleSheet/memberVipOld.t
 import { transformMemberVipV1 } from '~/transformers/googleSheet/memberVipV1.transformer'
 import { transformMemberVipV2 } from '~/transformers/googleSheet/memberVipV2.transformer'
 import { transformMemberVvip } from '~/transformers/googleSheet/memberVvip.transformer'
+import { writeTrasnformationResultToJson } from '~/utils/writeTransformationResultToJson'
 
 export async function syncMembersJob() {
   console.log('We are going to execute member sync job')
@@ -20,19 +21,33 @@ export async function syncMembersJob() {
   const results = await Promise.allSettled(transformations)
 
   if (results[0].status === 'fulfilled') {
-    console.log('The result from the transformAdmin', results[0].value)
+    writeTrasnformationResultToJson({
+      transformationResult: results[0].value,
+      userType: 'admin',
+    })
   }
   if (results[1].status === 'fulfilled') {
-    console.log('The result from the transformAdmin', results[1].value)
+    writeTrasnformationResultToJson({
+      transformationResult: results[1].value,
+      userType: 'memberVipOld',
+    })
   }
   if (results[2].status === 'fulfilled') {
-    console.log('The result from the transformAdmin', results[2].value)
+    writeTrasnformationResultToJson({
+      transformationResult: results[2].value,
+      userType: 'memberVipV1',
+    })
   }
   if (results[3].status === 'fulfilled') {
-    console.log('The result from the transformAdmin', results[3].value)
+    writeTrasnformationResultToJson({
+      transformationResult: results[3].value,
+      userType: 'memberVipV2',
+    })
   }
   if (results[4].status === 'fulfilled') {
-    console.log('The result from the transformAdmin', results[4].value)
+    writeTrasnformationResultToJson({
+      transformationResult: results[4].value,
+      userType: 'memberVvip',
+    })
   }
-  console.log('result from extractor', results)
 }
