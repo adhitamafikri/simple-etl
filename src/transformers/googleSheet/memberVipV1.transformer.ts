@@ -1,5 +1,6 @@
 import { memberVipV1 } from '~/config/columnMapping'
 import type { User } from '~/types/users'
+import { normalizeToE164 } from '~/utils/phoneUtils'
 
 export function transformMemberVipV1(rows: (string | number)[][]): User[] {
   const result: User[] = []
@@ -8,7 +9,7 @@ export function transformMemberVipV1(rows: (string | number)[][]): User[] {
     result.push({
       name: row[memberVipV1.name] as string,
       email: null,
-      phone: row[memberVipV1.phone] as string,
+      phone: normalizeToE164(row[memberVipV1.phone] as string),
       membership_expiry_date: (row[memberVipV1.expiry_date] as string)
         ? new Date(row[memberVipV1.expiry_date])
         : null,
