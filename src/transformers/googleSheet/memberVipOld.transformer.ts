@@ -10,7 +10,7 @@ export function transformMemberVipOld(rows: (string | number)[][]): User[] {
     if ((row[memberVipOld.status] as string).toLowerCase() !== 'expired') {
       result.push({
         name: row[memberVipOld.name] as string,
-        email: row[memberVipOld.email] as string,
+        email: (row[memberVipOld.email] as string).toLowerCase(),
         phone: normalizeToE164(row[memberVipOld.phone] as string),
         membership_tier: 'member', // in our existing database, VIP members are called 'member'
         membership_expiry_date: (row[memberVipOld.new_expiry_date] as string)

@@ -14,7 +14,7 @@ export function transformMemberVipV1(rows: (string | number)[][]): User[] {
       if (expiryDate > new Date()) {
         result.push({
           name: row[memberVipV1.name] as string,
-          email: null,
+          email: (row[memberVipV1.email] as string).toLowerCase(),
           phone: normalizeToE164(row[memberVipV1.phone] as string),
           membership_tier: 'member', // in our existing database, VIP members are called 'member'
           membership_expiry_date: expiryDate,

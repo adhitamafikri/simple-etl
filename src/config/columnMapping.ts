@@ -17,9 +17,10 @@ export const memberVipV1 = {
   registration_date: 1, // Column B
   expiry_date: 2, // Column C
   name: 3, // Column D
-  phone: 4, // Column E
-  telegram_username: 5, // Column F
-  membership_tier: 6, // Column F
+  email: 4, // Column E
+  phone: 5, // Column F
+  telegram_username: 6, // Column G
+  membership_tier: 7, // Column H
 }
 
 export const memberVipV2 = {
