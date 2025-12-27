@@ -1,0 +1,41 @@
+import {
+  bigserial,
+  boolean,
+  char,
+  index,
+  pgTable,
+  timestamp,
+  unique,
+  varchar,
+} from 'drizzle-orm/pg-core'
+
+export const users = pgTable(
+  'users',
+  {
+    id: bigserial({ mode: 'number' }).primaryKey(),
+    name: varchar({ length: 255 }).notNull().default(''),
+    phone: varchar({ length: 255 }),
+    email: varchar({ length: 255 }),
+    password: varchar({ length: 255 }),
+    has_completed_onboarding: boolean().notNull().default(false),
+    first_login_at: timestamp({ mode: 'date', precision: 0 }),
+    email_verified_at: timestamp({ mode: 'date', precision: 0 }),
+    created_at: timestamp({ mode: 'date', precision: 0 }),
+    updated_at: timestamp({ mode: 'date', precision: 0 }),
+    deleted_at: timestamp({ mode: 'date', precision: 0 }),
+    supabase_id: varchar({ length: 255 }),
+    onboarding_flow_id: char({ length: 26 }),
+    membership_tier: varchar({ length: 20 }),
+    membership_expiry_date: timestamp({ mode: 'date', precision: 0 }),
+    last_login_at: timestamp({ mode: 'date', precision: 0 }),
+  },
+  (table) => [
+    unique('users_email_unique').on(table.email),
+    unique('users_phone_unique').on(table.phone),
+    unique('users_supabase_id_unique').on(table.supabase_id),
+    index('users_membership_expiry_date_index').on(table.membership_expiry_date),
+    index('users_membership_tier_index').on(table.membership_tier),
+    index('users_phone_index').on(table.phone),
+    index('users_supabase_id_index').on(table.supabase_id),
+  ],
+)
