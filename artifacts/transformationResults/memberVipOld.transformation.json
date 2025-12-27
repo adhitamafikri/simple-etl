@@ -1,19 +1,5 @@
 [
   {
-    "name": "Fajar Maulana Halimun",
-    "email": "",
-    "phone": "+6285155349234",
-    "membership_tier": "member",
-    "membership_expiry_date": "2026-12-31T00:00:00.000Z"
-  },
-  {
-    "name": "Deny Ardiansyah",
-    "email": "",
-    "phone": "+62811813553",
-    "membership_tier": "member",
-    "membership_expiry_date": "2026-12-31T00:00:00.000Z"
-  },
-  {
     "name": "Reza Nugraha",
     "email": "azerpn211@gmail.com",
     "phone": "+6281380546059",
@@ -217,39 +203,11 @@
     "membership_expiry_date": "2026-07-23T17:00:00.000Z"
   },
   {
-    "name": "Okto",
-    "email": "",
-    "phone": "+6281316182877",
-    "membership_tier": "member",
-    "membership_expiry_date": "2026-12-31T00:00:00.000Z"
-  },
-  {
-    "name": "Paulle Aldo",
-    "email": "",
-    "phone": "+6281905695790",
-    "membership_tier": "member",
-    "membership_expiry_date": "2026-12-31T00:00:00.000Z"
-  },
-  {
-    "name": "Marvin Leonardo",
-    "email": "",
-    "phone": "+6285100746646",
-    "membership_tier": "member",
-    "membership_expiry_date": "2026-12-31T00:00:00.000Z"
-  },
-  {
     "name": "Alldi",
     "email": "",
     "phone": "+6285939990770",
     "membership_tier": "member",
     "membership_expiry_date": "2026-07-23T17:00:00.000Z"
-  },
-  {
-    "name": "Imam Rozali",
-    "email": "",
-    "phone": "+6287768297864",
-    "membership_tier": "member",
-    "membership_expiry_date": "2026-12-31T00:00:00.000Z"
   },
   {
     "name": "Lukman Abdul Hakim",
