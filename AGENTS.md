@@ -7,7 +7,9 @@ alwaysApply: true
 
 **Simple ETL Project for synchronizing member data from Google Sheets to PostgreSQL**
 
-https://github.com/kjonexa/kjoacademy-etl (private)
+Repo: https://github.com/kjonexa/kjoacademy-etl (private)
+Related Repo:
+- https://github.com/kjonexa/kjoacademy-be (private)
 
 ---
 
@@ -18,6 +20,7 @@ https://github.com/kjonexa/kjoacademy-etl (private)
 - **@googleapis/sheets**: helps us on accessing, reading, and retrieving data from our Google Sheet
 - **dayjs**: make it easier for us to deal with date and time manipulations
 - **postgres:17-alpine**: our primary database. Used for testing our ETL job behaviors locally
+- **pino v10**: for logging purposes
 - **supabase**: the BaaS (backend as a service) that manages our development and production PostgreSQL. If the ETL job is successful in local environment, the job should also be tested in development PostgreSQL, before finally doing it to the production PostgreSQL.
 
 ## Reason this Project is Created
@@ -59,8 +62,17 @@ Lookup member data in PostgreSQL -> if found call the Supabase endpoint to gener
           - insert the data into the data store if it does not exist
           - update the existing data in the data store if it exist
 - **jobs**
-    - This directory contains the *jobs* functions that orchestrate these processes *extraction* -> *transformation* -> *loading*.
-    - The *jobs* duty is purely for orchestrating the particular ETL process, no direct mutations or manipulations to any result of extraction, transformation, and loading that is being done.
+    - There will be 2 kind of jobs in this ETL pipeline -> *ingestion* and *maintenance*
+    - **ingestion**
+        - This directory contains the *jobs* functions that orchestrate these processes *extraction* -> *transformation* -> *loading*.
+        - The *jobs* duty is purely for orchestrating the particular ETL process, no direct mutations or manipulations to any result of extraction, transformation, and loading that is being done.
+    - **maintenance**
+        - This directory contains the *jobs* functions that acts as maintenance jobs for our PostgreSQL.
+        - For example, we would have a job that de-duplicates member data by email
 
 ### The unit tests are located within the **tests** directory in this project
 - The sub-directory mirrors the **src** directory structure
+
+## Related Documents
+Here are the supporting documents that you can refer to:
+- [System Design Doc](./docs/system-design.md)
