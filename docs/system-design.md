@@ -51,6 +51,13 @@ export type User = {
   membership_expiry_date: Date | null
 }
 ```
+Here are several rules that should be adhered to when dealing with transformation
+    2.1. Admin
+    2.2. Member VIP Old
+    2.3. Member VIP V1
+    2.4. Member VIP V2
+    2.5. Member VVIP
+
 3. The *loaders* should load the data into our PostgreSQL and synchronize them to Supabase. Here is the detailed flow:
   - Batched transactions *per 500 records* for loading data to PostgreSQL
   - Batched transactions *per 50 records* for synchronization to Supabase

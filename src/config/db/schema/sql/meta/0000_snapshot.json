@@ -1,5 +1,5 @@
 {
-  "id": "c8d5cf81-02e9-4a8f-b075-dc1616a44670",
+  "id": "62c6353a-f7eb-48aa-91e0-2b141e2911d6",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -18,14 +18,13 @@
           "name": "name",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": true,
-          "default": "''"
+          "notNull": true
         },
         "phone": {
           "name": "phone",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "email": {
           "name": "email",
@@ -55,6 +54,12 @@
         "email_verified_at": {
           "name": "email_verified_at",
           "type": "timestamp (0)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "telegram_username": {
+          "name": "telegram_username",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": false
         },
@@ -184,6 +189,13 @@
           "nullsNotDistinct": false,
           "columns": [
             "phone"
+          ]
+        },
+        "telegram_username_unique": {
+          "name": "telegram_username_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "telegram_username"
           ]
         },
         "users_supabase_id_unique": {

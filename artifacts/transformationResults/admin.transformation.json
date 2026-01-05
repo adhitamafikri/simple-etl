@@ -4,13 +4,15 @@
     "email": "adhitamafikri.developer@gmail.com",
     "phone": "+6287840052978",
     "membership_tier": null,
-    "membership_expiry_date": null
+    "membership_expiry_date": null,
+    "telegram_username": null
   },
   {
     "name": "Andi Ashari",
     "email": "a.ashari1302@gmail.com",
     "phone": "+6285280452688",
     "membership_tier": null,
-    "membership_expiry_date": null
+    "membership_expiry_date": null,
+    "telegram_username": null
   }
 ]

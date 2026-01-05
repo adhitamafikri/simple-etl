@@ -1,12 +1,13 @@
 CREATE TABLE "users" (
 	"id" bigserial PRIMARY KEY NOT NULL,
-	"name" varchar(255) DEFAULT '' NOT NULL,
-	"phone" varchar(255),
+	"name" varchar(255) NOT NULL,
+	"phone" varchar(255) NOT NULL,
 	"email" varchar(255),
 	"password" varchar(255),
 	"has_completed_onboarding" boolean DEFAULT false NOT NULL,
 	"first_login_at" timestamp (0),
 	"email_verified_at" timestamp (0),
+	"telegram_username" varchar(255),
 	"created_at" timestamp (0),
 	"updated_at" timestamp (0),
 	"deleted_at" timestamp (0),
@@ -17,6 +18,7 @@ CREATE TABLE "users" (
 	"last_login_at" timestamp (0),
 	CONSTRAINT "users_email_unique" UNIQUE("email"),
 	CONSTRAINT "users_phone_unique" UNIQUE("phone"),
+	CONSTRAINT "telegram_username_unique" UNIQUE("telegram_username"),
 	CONSTRAINT "users_supabase_id_unique" UNIQUE("supabase_id")
 );
 --> statement-breakpoint

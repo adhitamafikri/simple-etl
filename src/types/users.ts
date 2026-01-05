@@ -4,6 +4,7 @@ export type User = {
   name: string
   phone: string | null
   email: string | null
+  telegram_username: string | null
   membership_tier: string | null
   membership_expiry_date: Date | null
 }

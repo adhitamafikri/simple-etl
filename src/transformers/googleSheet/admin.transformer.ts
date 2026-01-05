@@ -1,4 +1,4 @@
-import { adminColumnMapping } from '~/config/columnMapping'
+import { adminColumnMapping } from '~/config/googleSheet/columnMapping'
 import type { User } from '~/types/users'
 import { normalizeToE164 } from '~/utils/phoneUtils'
 
@@ -12,6 +12,7 @@ export function transformAdmin(rows: (string | number)[][]): User[] {
       phone: normalizeToE164(row[adminColumnMapping.phone] as string),
       membership_tier: null,
       membership_expiry_date: null,
+      telegram_username: null,
     })
   })
 

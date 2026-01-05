@@ -1,4 +1,4 @@
-import { memberVvip } from '~/config/columnMapping'
+import { memberVvip } from '~/config/googleSheet/columnMapping'
 import type { User } from '~/types/users'
 import { normalizeToE164 } from '~/utils/phoneUtils'
 
@@ -14,6 +14,7 @@ export function transformMemberVvip(rows: (string | number)[][]): User[] {
       membership_expiry_date: (row[memberVvip.expiry_date] as string)
         ? new Date(row[memberVvip.expiry_date])
         : new Date('2026-12-31'),
+      telegram_username: null
     })
   })
 
