@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { censorPhone, normalizeToE164 } from '~/utils/phoneUtils'
+import { censorPhone, normalizeToE164 } from '../../src/utils/phone-utils'
 
 describe('normalizeToE164', () => {
   test.each([
