@@ -9,6 +9,8 @@ src/config/google/*.json
 dist/
 build/
 
+artifacts/transformation-results/*.json
+
 # Environment variables
 .env
 .env.local
