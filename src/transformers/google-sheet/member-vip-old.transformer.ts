@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import { memberVipOld } from '~/config/googleSheet/columnMapping'
 import type { User } from '~/types/users'
-import { normalizeToE164 } from '~/utils/phoneUtils'
+import { normalizeToE164 } from '~/utils/phone-utils'
 
 /**
  * @important - some of the data can be skipped if it satisfies this condition

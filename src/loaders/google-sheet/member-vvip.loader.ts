@@ -1,12 +1,12 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import type { User } from '~/types/users'
-import { upsertUsers } from '../core/userLoader'
+import { upsertUsers } from '../core/user-loader'
 
 export async function loadMemberVvipData(): Promise<void> {
   const filePath = path.resolve(
     process.cwd(),
-    './artifacts/transformationResults/memberVvip.transformation.json',
+    './artifacts/transformationResults/member-vvip-transformation.json',
   )
 
   try {

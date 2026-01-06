@@ -7,11 +7,11 @@ import type { User, UserType } from '~/types/users'
  * This helper function will be used for writing transformation results to
  * their appropriate JSON files in 'artifacts/transformationResults' directory
  * ----
- * - admin transformation -> admin.transformation.json
- * - member Old VIP -> memberOldVip.transformation.json
- * - member VIP V1 transformation -> memberVipV1.transformation.json
- * - member VIP V2 transformation -> memberVipV2.transformation.json
- * - member VVIP transformation -> memberVvip.transformation.json
+ * - admin transformation -> admin-transformation.json
+ * - member Old VIP -> member-vip-old-transformation.json
+ * - member VIP V1 transformation -> member-vip-v1-transformation.json
+ * - member VIP V2 transformation -> member-vip-v2-transformation.json
+ * - member VVIP transformation -> member-vvip-transformation.json
  */
 export function writeTrasnformationResultToJson({
   transformationResult,
@@ -21,11 +21,11 @@ export function writeTrasnformationResultToJson({
   userType: UserType
 }) {
   const fileNameMapping: Record<UserType, string> = {
-    admin: 'admin.transformation.json',
-    memberVipOld: 'memberVipOld.transformation.json',
-    memberVipV1: 'memberVipV1.transformation.json',
-    memberVipV2: 'memberVipV2.transformation.json',
-    memberVvip: 'memberVvip.transformation.json',
+    admin: 'admin-transformation.json',
+    memberVipOld: 'member-vip-old-transformation.json',
+    memberVipV1: 'member-vip-v1-transformation.json',
+    memberVipV2: 'member-vip-v2-transformation.json',
+    memberVvip: 'member-vvip-transformation.json',
   }
 
   const filePath = path.resolve(

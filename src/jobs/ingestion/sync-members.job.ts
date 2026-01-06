@@ -1,10 +1,10 @@
-import { memberExtractor } from '~/extractors/googleSheet/member.extractor'
-import { transformAdmin } from '~/transformers/googleSheet/admin.transformer'
-import { transformMemberVipOld } from '~/transformers/googleSheet/memberVipOld.transformer'
-import { transformMemberVipV1 } from '~/transformers/googleSheet/memberVipV1.transformer'
-import { transformMemberVipV2 } from '~/transformers/googleSheet/memberVipV2.transformer'
-import { transformMemberVvip } from '~/transformers/googleSheet/memberVvip.transformer'
-import { writeTrasnformationResultToJson } from '~/utils/writeTransformationResultToJson'
+import { memberExtractor } from '~/extractors/google-sheet/member.extractor'
+import { transformAdmin } from '~/transformers/google-sheet/admin.transformer'
+import { transformMemberVipOld } from '~/transformers/google-sheet/member-vip-old.transformer'
+import { transformMemberVipV1 } from '~/transformers/google-sheet/member-vip-v1.transformer'
+import { transformMemberVipV2 } from '~/transformers/google-sheet/member-vip-v2.transformer'
+import { transformMemberVvip } from '~/transformers/google-sheet/member-vvip.transformer'
+import { writeTrasnformationResultToJson } from '~/utils/write-transformation-result-to-json'
 
 export async function syncMembersJob() {
   // Extraction

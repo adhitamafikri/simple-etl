@@ -1,15 +1,18 @@
-.PHONY: up down restart logs
-
+.PHONY: up
 up:
 	docker compose up -d
 
+.PHONY: down
 down:
 	docker compose down
 
+.PHONY: restart
 restart: down up
 
+.PHONY: logs
 logs:
 	docker compose logs -f postgres
 
-ps:
-	docker compose ps
+.PHONY: ingest-sync-members
+ingest-sync-members:
+	bun run 

@@ -1,6 +1,6 @@
 import { memberVvip } from '~/config/googleSheet/columnMapping'
 import type { User } from '~/types/users'
-import { normalizeToE164 } from '~/utils/phoneUtils'
+import { normalizeToE164 } from '~/utils/phone-utils'
 
 export function transformMemberVvip(rows: (string | number)[][]): User[] {
   const result: User[] = []
