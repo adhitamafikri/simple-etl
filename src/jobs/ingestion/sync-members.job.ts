@@ -17,7 +17,7 @@ export async function syncMembersJob() {
     transformAdmin(result.admin),
     transformMemberVipOld(result.memberVipOld),
     transformMemberVipV1(result.memberVipV1),
-    // transformMemberVipV2(result.memberVipV2),
+    transformMemberVipV2(result.memberVipV2),
     // transformMemberVvip(result.memberVvip),
   ]
   const results = await Promise.allSettled(transformations)
@@ -45,13 +45,14 @@ export async function syncMembersJob() {
       userType: 'memberVipV1',
     })
   }
-  // if (results[3].status === 'fulfilled') {
-  //   totalMembers += results[3].value.length
-  //   writeTrasnformationResultToJson({
-  //     transformationResult: results[3].value,
-  //     userType: 'memberVipV2',
-  //   })
-  // }
+
+  if (results[3].status === 'fulfilled') {
+    totalMembers += results[3].value.length
+    writeTrasnformationResultToJson({
+      transformationResult: results[3].value,
+      userType: 'memberVipV2',
+    })
+  }
   // if (results[4].status === 'fulfilled') {
   //   totalMembers += results[4].value.length
   //   writeTrasnformationResultToJson({

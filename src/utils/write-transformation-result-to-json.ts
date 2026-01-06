@@ -5,7 +5,7 @@ import type { User, UserType } from '~/types/users'
 /**
  * @description
  * This helper function will be used for writing transformation results to
- * their appropriate JSON files in 'artifacts/transformationResults' directory
+ * their appropriate JSON files in 'artifacts/transformation-results' directory
  * ----
  * - admin transformation -> admin-transformation.json
  * - member Old VIP -> member-vip-old-transformation.json
@@ -30,7 +30,7 @@ export function writeTrasnformationResultToJson({
 
   const filePath = path.resolve(
     process.cwd(),
-    `./artifacts/transformationResults/${fileNameMapping[userType]}`,
+    `./artifacts/transformation-results/${fileNameMapping[userType]}`,
   )
   const content = JSON.stringify(transformationResult, null, 2)
   fs.writeFile(filePath, content, (error: NodeJS.ErrnoException | null) => {
