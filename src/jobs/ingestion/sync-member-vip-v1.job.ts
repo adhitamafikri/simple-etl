@@ -2,7 +2,7 @@ import { memberVipV1Extractor } from '~/extractors/google-sheet/member-vip-v1.ex
 import { transformMemberVipV1 } from '~/transformers/google-sheet/member-vip-v1.transformer'
 import { writeTrasnformationResultToJson } from '~/utils/write-transformation-result-to-json'
 
-export async function memberVipV1IngestionJob() {
+export async function syncMemberVipV1Job() {
   // Extraction
   console.log('We are going to execute member VIP V1 sync job')
   const memberVipV1Data = await memberVipV1Extractor()

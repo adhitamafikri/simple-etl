@@ -3,6 +3,7 @@ import { transformAdmin } from '~/transformers/google-sheet/admin.transformer'
 import { transformMemberVipOld } from '~/transformers/google-sheet/member-vip-old.transformer'
 import { transformMemberVipV1 } from '~/transformers/google-sheet/member-vip-v1.transformer'
 import { transformMemberVipV2 } from '~/transformers/google-sheet/member-vip-v2.transformer'
+import { transformMemberVvip } from '~/transformers/google-sheet/member-vvip.transformer'
 import { writeTrasnformationResultToJson } from '~/utils/write-transformation-result-to-json'
 
 export async function syncMembersJob() {
@@ -17,7 +18,7 @@ export async function syncMembersJob() {
     transformMemberVipOld(result.memberVipOld),
     transformMemberVipV1(result.memberVipV1),
     transformMemberVipV2(result.memberVipV2),
-    // transformMemberVvip(result.memberVvip),
+    transformMemberVvip(result.memberVvip),
   ]
   const results = await Promise.allSettled(transformations)
   let totalMembers = 0
@@ -52,13 +53,14 @@ export async function syncMembersJob() {
       userType: 'memberVipV2',
     })
   }
-  // if (results[4].status === 'fulfilled') {
-  //   totalMembers += results[4].value.length
-  //   writeTrasnformationResultToJson({
-  //     transformationResult: results[4].value,
-  //     userType: 'memberVvip',
-  //   })
-  // }
+
+  if (results[4].status === 'fulfilled') {
+    totalMembers += results[4].value.length
+    writeTrasnformationResultToJson({
+      transformationResult: results[4].value,
+      userType: 'memberVvip',
+    })
+  }
 
   console.log(`The total member data from all the sheets is: ${totalMembers}`)
 

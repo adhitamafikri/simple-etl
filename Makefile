@@ -1,3 +1,11 @@
+.PHONY: lint
+lint:
+	bun run lint
+
+.PHONY: format
+format:
+	bun run format
+
 .PHONY: up
 up:
 	docker compose up -d

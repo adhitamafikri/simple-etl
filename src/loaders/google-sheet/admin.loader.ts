@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import type { User } from '~/types/users'
-import { upsertUsers } from '../core/user-loader'
+import { upsertUsers } from '../core/user.loader'
 
 export async function loadAdminData(): Promise<void> {
   const filePath = path.resolve(
