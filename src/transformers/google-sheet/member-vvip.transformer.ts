@@ -14,7 +14,7 @@ export function transformMemberVvip(rows: (string | number)[][]): User[] {
       membership_expiry_date: (row[memberVvip.expiry_date] as string)
         ? new Date(row[memberVvip.expiry_date])
         : new Date('2026-12-31'),
-      telegram_username: null
+      telegram_username: null,
     })
   })
 

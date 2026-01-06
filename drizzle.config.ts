@@ -1,4 +1,4 @@
-import { defineConfig } from "drizzle-kit";
+import { defineConfig } from 'drizzle-kit'
 
 export default defineConfig({
   dialect: 'postgresql', // 'mysql' | 'sqlite' | 'turso'
@@ -9,6 +9,6 @@ export default defineConfig({
     host: process.env.PG_HOST || '',
     user: process.env.PG_USER || '',
     password: process.env.PG_PASSWORD || '',
-    ssl: false
-  }
+    ssl: false,
+  },
 })

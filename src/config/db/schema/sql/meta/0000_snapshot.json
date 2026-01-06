@@ -180,30 +180,22 @@
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         },
         "users_phone_unique": {
           "name": "users_phone_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "phone"
-          ]
+          "columns": ["phone"]
         },
         "telegram_username_unique": {
           "name": "telegram_username_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "telegram_username"
-          ]
+          "columns": ["telegram_username"]
         },
         "users_supabase_id_unique": {
           "name": "users_supabase_id_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "supabase_id"
-          ]
+          "columns": ["supabase_id"]
         }
       },
       "policies": {},

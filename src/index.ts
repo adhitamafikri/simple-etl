@@ -1,12 +1,12 @@
 import path from 'node:path'
 import dotenv from 'dotenv'
-import { syncMembersJob } from '~/jobs/ingestion/sync-members.job'
-import { dedupeMembersByEmailJob } from '~/jobs/maintenance/dedupe-members-by-email.job'
 import { adminIngestionJob } from '~/jobs/ingestion/admin-ingestion.job'
 import { memberVipOldIngestionJob } from '~/jobs/ingestion/member-vip-old-ingestion.job'
 import { memberVipV1IngestionJob } from '~/jobs/ingestion/member-vip-v1-ingestion.job'
 import { memberVipV2IngestionJob } from '~/jobs/ingestion/member-vip-v2-ingestion.job'
 import { memberVvipIngestionJob } from '~/jobs/ingestion/member-vvip-ingestion.job'
+import { syncMembersJob } from '~/jobs/ingestion/sync-members.job'
+import { dedupeMembersByEmailJob } from '~/jobs/maintenance/dedupe-members-by-email.job'
 
 dotenv.config({
   path: path.resolve(process.cwd(), '.env'),

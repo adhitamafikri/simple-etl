@@ -3,7 +3,6 @@ import { transformAdmin } from '~/transformers/google-sheet/admin.transformer'
 import { transformMemberVipOld } from '~/transformers/google-sheet/member-vip-old.transformer'
 import { transformMemberVipV1 } from '~/transformers/google-sheet/member-vip-v1.transformer'
 import { transformMemberVipV2 } from '~/transformers/google-sheet/member-vip-v2.transformer'
-import { transformMemberVvip } from '~/transformers/google-sheet/member-vvip.transformer'
 import { writeTrasnformationResultToJson } from '~/utils/write-transformation-result-to-json'
 
 export async function syncMembersJob() {
