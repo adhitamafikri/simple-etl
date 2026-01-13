@@ -23,4 +23,9 @@ logs:
 
 .PHONY: ingest-sync-members
 ingest-sync-members:
-	bun run 
+	bun run
+
+.PHONY: connect-postgres
+connect-postgres:
+	chmod +x ./scripts/connect-postgres.sh
+	./scripts/connect-postgres.sh

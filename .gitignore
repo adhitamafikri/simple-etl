@@ -10,6 +10,7 @@ dist/
 build/
 
 artifacts/transformation-results/*.json
+artifacts/supabase/*.crt
 
 # Environment variables
 .env
