@@ -13,9 +13,22 @@ DB_PASSWORD=$SUPABASE_DB_PASSWORD
 
 CERT_PATH="$(dirname "$0")/../artifacts/supabase/prod-supabase.crt"
 
-psql "sslmode=verify-full \
-    sslrootcert=$CERT_PATH \
-    host=$DB_HOST \
-    dbname=$DB_DATABASE \
-    user=$DB_USERNAME \
-    password=$DB_PASSWORD"
+# Verify certificate exists
+if [ ! -f "$CERT_PATH" ]; then
+    echo "Error: Certificate file not found at $CERT_PATH"
+    exit 1
+fi
+
+echo "Certificate found: $CERT_PATH"
+echo "Connecting to: $DB_HOST"
+echo "Database: $DB_DATABASE"
+echo "Username: $DB_USERNAME"
+echo ""
+
+# Use URI format which handles special characters better
+# URL-encode the password if needed
+export PGPASSWORD="$DB_PASSWORD"
+export PGSSLMODE=verify-full
+export PGSSLROOTCERT="$CERT_PATH"
+
+psql -h "$DB_HOST" -U "$DB_USERNAME" -d "$DB_DATABASE" -p 5432
