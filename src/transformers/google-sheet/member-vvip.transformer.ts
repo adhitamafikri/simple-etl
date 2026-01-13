@@ -1,4 +1,4 @@
-import { memberVvip } from '~/config/googleSheet/columnMapping'
+import { memberVvip } from '~/config/google-sheet/column-mapping'
 import type { User } from '~/types/users'
 import { normalizeToE164 } from '~/utils/phone-utils'
 

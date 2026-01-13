@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { memberVipV2 } from '~/config/googleSheet/columnMapping'
+import { memberVipV2 } from '~/config/google-sheet/column-mapping'
 import type { User } from '~/types/users'
 import { normalizeToE164 } from '~/utils/phone-utils'
 

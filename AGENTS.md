@@ -73,6 +73,11 @@ Lookup member data in PostgreSQL -> if found call the Supabase endpoint to gener
 ### The unit tests are located within the **tests** directory in this project
 - The sub-directory mirrors the **src** directory structure
 
+## Typescript Type Definitions
+Refer to [./src/types/](./src/types/) for the type definitions used across this sytem
+
 ## Related Documents
 Here are the supporting documents that you can refer to:
 - [System Design Doc](./docs/system-design.md)
+- [Ingestion Pipelines Doc](./docs/functionalities/ingestion)
+

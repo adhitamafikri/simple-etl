@@ -1,5 +1,5 @@
 import { auth, sheets, type sheets_v4 } from '@googleapis/sheets'
-import { sheetMapping } from '~/config/googleSheet/sheetMapping'
+import { sheetMapping } from '~/config/google-sheet/sheet-mapping'
 import type { UserType } from '~/types/users'
 
 async function extractMemberData({
