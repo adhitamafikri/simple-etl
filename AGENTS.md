@@ -80,4 +80,3 @@ Refer to [./src/types/](./src/types/) for the type definitions used across this 
 Here are the supporting documents that you can refer to:
 - [System Design Doc](./docs/system-design.md)
 - [Ingestion Pipelines Doc](./docs/functionalities/ingestion)
-
